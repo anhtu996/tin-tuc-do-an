@@ -1,0 +1,24 @@
+
+   InvalidArgumentException  : Attribute [controller] does not exist.
+
+  at D:\xampp\htdocs\tin_tuc\vendor\laravel\framework\src\Illuminate\Routing\RouteRegistrar.php: 76
+  72:      */
+  73:     public function attribute($key, $value)
+  74:     {
+  75:         if (! in_array($key, $this->allowedAttributes)) {
+  76:             throw new InvalidArgumentException("Attribute [{$key}] does not exist.");
+  77:         }
+  78: 
+  79:         $this->attributes[Arr::get($this->aliases, $key, $key)] = $value;
+  80: 
+  81:         return $this;
+
+  Exception trace:
+
+  1   Illuminate\Routing\RouteRegistrar::attribute("controller", "datatables")
+      D:\xampp\htdocs\tin_tuc\vendor\laravel\framework\src\Illuminate\Routing\Router.php : 1218
+
+  2   Illuminate\Routing\Router::__call("controller")
+      D:\xampp\htdocs\tin_tuc\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php : 221
+
+  Please use the argument -v to see more details.
